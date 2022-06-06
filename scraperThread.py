@@ -14,17 +14,17 @@ class Service:
     def runService(self):
         lastTime = -1
         while True:
-            currWaitTime = lastTime + self._updateInterval - time.time()
+            currWaitTime = lastTime + self._updateInterval - time()
             if currWaitTime > 0:
                 time.sleep(currWaitTime)
 
             try:
-                startTime = time.time()
+                startTime = time()
                 self.doGivenService()
                 if self._logPerf:
-                    prefLogger.info("service: {:.3f}s".format(time.time()-startTime))
+                    prefLogger.info("service: {:.3f}s".format(time()-startTime))
             except Exception as exceptionRaised:
                 logger.critical('Run error %s', exceptionRaised, exc_info=True)
 
-    def doGivenService():
+    def doGivenService(self):
         pass

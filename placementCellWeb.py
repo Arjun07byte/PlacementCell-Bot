@@ -1,6 +1,4 @@
-from sys import intern
 from bs4 import BeautifulSoup as codeBS4
-from click import style
 import requests
 
 internship_URL = "https://pgdavplacementcell.in/internships.php"
@@ -191,7 +189,7 @@ class DriveService:
     def startFetchingDetails(self):
         self.driveCards = self.beautyHtml.find_all('div', class_ = 'drives-info card d-inline-block')
 
-    def getInternshipDetails(self):
+    def getDriveDetails(self):
         for eachIntern in self.driveCards:
             finalDetails = DriveDetails.getDetails(eachIntern)
             self.driveObjects.append(finalDetails)
