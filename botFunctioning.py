@@ -64,7 +64,7 @@ def botInternshipAlerts(update, context):
             dateIdx = datePosted.find(":") + 2
             datePosted = datePosted[dateIdx:dateIdx+10]
 
-            if(dateIdx == datePosted):
+            if(currentDateTime == datePosted):
                 currInternShipObj = InternDetails.getDetails(lastestInternBlock)
                 if(lastFetched != currInternShipObj):
                     lastFetched = currInternShipObj
@@ -73,9 +73,10 @@ def botInternshipAlerts(update, context):
                         formatInfo.formatAndReturnInternInfo(lastFetched)
                     , parse_mode = ParseMode.HTML)
 
-        newService = scraperService(300)
+        newService = scraperService(3000)
         newService.doGivenService = newSer
-        newService.runService()
+        newService.start()
+        
     except Exception as e:
         update.message.reply_text("<b>Sorry Unable !! to start internship alerts</b> 🙂 ", parse_mode = ParseMode.HTML)
 

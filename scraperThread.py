@@ -1,17 +1,13 @@
 from time import time
 import threading
-import logging
 
-logger = logging.getLogger()
-prefLogger = logging.getLogger("performance")
 
-class Service:
-    def __init__(self, updateInterval, logPerf=True):
+class Service(threading.Thread):
+    def __init__(self, updateInterval):
         threading.Thread.__init__(self)
         self._updateInterval = updateInterval
-        self._logPerf = logPerf
     
-    def runService(self):
+    def run(self):
         lastTime = -1
         while True:
             currWaitTime = lastTime + self._updateInterval - time()
@@ -19,12 +15,10 @@ class Service:
                 time.sleep(currWaitTime)
 
             try:
-                startTime = time()
                 self.doGivenService()
-                if self._logPerf:
-                    prefLogger.info("service: {:.3f}s".format(time()-startTime))
             except Exception as exceptionRaised:
-                logger.critical('Run error %s', exceptionRaised, exc_info=True)
+                # handle exception raised here
+                pass
 
     def doGivenService(self):
         pass

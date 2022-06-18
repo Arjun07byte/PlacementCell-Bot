@@ -1,8 +1,6 @@
 from bs4 import BeautifulSoup as codeBS4
+from constants import internship_URL, drives_URL
 import requests
-
-internship_URL = "https://pgdavplacementcell.in/internships.php"
-drives_URL = "https://pgdavplacementcell.in/registration.php"
 
 class InternDetails:
     def __init__(self):
