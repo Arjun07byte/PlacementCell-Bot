@@ -19,6 +19,8 @@ def formatAndReturnInternInfo(internObj):
     if(len(internObj.queryContact) > 0):
         replyMessage = replyMessage + '<b>' + '• For Queries, Contact :- ' + '</b>' + (internObj.queryContact) + '\n\n'
     
+    replyMessage = replyMessage + '\n\n' + "Go and Apply On :- https://pgdavplacementcell.in/internships.php \n\n"
+
     return replyMessage
 
 
@@ -46,5 +48,7 @@ def formatAndReturnDriveInfo(driveObj):
         replyMessage = replyMessage + '<b>' + '• Last Date To Apply :- ' + '</b>' + (driveObj.lastDateApply) + '\n\n'
     if(len(driveObj.queryContact) > 0):
         replyMessage = replyMessage + '<b>' + '• For Queries, Contact :- ' + '</b>' + (driveObj.queryContact) + '\n\n'
+    
+    replyMessage = replyMessage + '\n\n' + "Go and Apply On :- https://pgdavplacementcell.in/registration.php \n\n"
     
     return replyMessage
