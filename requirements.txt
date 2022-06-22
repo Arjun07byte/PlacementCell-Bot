@@ -1,6 +1,5 @@
-beautifulsoup4
-requests
-telegram
-datetime
+beautifulsoup4==4.11.1
+requests==2.25.1
+telegram==0.0.1
 time
 threading
