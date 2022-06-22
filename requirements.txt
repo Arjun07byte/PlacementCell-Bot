@@ -1,0 +1,6 @@
+beautifulsoup4
+requests
+telegram
+datetime
+time
+threading
