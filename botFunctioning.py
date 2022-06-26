@@ -1,4 +1,4 @@
-from telegram import ParseMode
+import telegram
 import constants as codeConstants
 from scraperThread import Service as scraperService
 from placementCellWeb import DriveService, InternDetails, InternShipService
@@ -7,6 +7,8 @@ import telegram.ext as tele_Bot
 from bs4 import BeautifulSoup as codeBS4
 import requests
 from datetime import date
+
+ParseMode = telegram.ParseMode
 
 # command to get latest 5 internships
 def botLatestInternshipCommand(update, context):
