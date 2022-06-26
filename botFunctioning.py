@@ -26,6 +26,7 @@ def botLatestInternshipCommand(update, context):
                 , parse_mode = ParseMode.HTML)
 
     except Exception as e:
+        print(e)
         update.message.reply_text("<b>Sorry Unable !! to Fetch Internship Details</b> 🙂 ", parse_mode = ParseMode.HTML)
 
 
